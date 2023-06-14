@@ -1,0 +1,29 @@
+﻿@page "/"
+
+@inject ISnackbar Snackbar
+@using System.Net;
+
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+@error - @ex
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<MyComp></MyComp>
+
+
+@code{
+    public int error;
+    public string ex;
+
+    protected override Task OnInitializedAsync()
+    {
+        //Snackbar.Add("OK", Severity.Error);
+        return base.OnInitializedAsync();
+    }
+}
