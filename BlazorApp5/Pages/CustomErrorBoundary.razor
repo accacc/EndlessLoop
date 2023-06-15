@@ -20,11 +20,13 @@ else
 
 
 
-    Recover();
 }
 
 @code {
     List<Exception> receivedExceptions = new();
+
+
+  
 
     protected override Task OnErrorAsync(Exception exception)
     {
@@ -32,9 +34,5 @@ else
         return  base.OnErrorAsync(exception);
     }
 
-    public new void Recover()
-    {
-        receivedExceptions.Clear();
-        base.Recover();
-    }
+   
 }
